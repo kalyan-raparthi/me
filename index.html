@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>!localhost</title>
+    <title> !localhost </title>
 </head>
 <body>
     <div id="riddle">
         EIXIE: Enter your login code.
     </div>
     <form action="" method="post">
-        <label for="code">INPUT:</label>
+        <label for="code">INPUT: </label>
         <input type="text" name="code" id="code" autofocus autocomplete="off">
     </form>
     <style>
@@ -26,6 +26,7 @@
         }
 
         #code { 
+            color: white;
             background-color: black;
             font-size: inherit;
             font-weight: inherit;
@@ -44,7 +45,18 @@
             bottom: 0;
             margin-left: 25dvw;
         }
-        
+       
+        @media only screen  and (max-width:650px) {
+            body {
+                font-size: 5.2vw;
+            }
+
+            #code {
+                font-family: monospace;
+                font-size: 5.3;
+            }
+        }
+
     </style>
 
     <script>
