@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> !localhost </title>
-</head>
-<body>
-    <div id="riddle">
-    </div>
-    <form action="" method="post">
-        <label for="code">INPUT: </label>
-        <input type="text" name="code" id="code" autofocus autocomplete="off">
-    </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> !localhost </title>
+    </head>
+    <body>
+    <script src="print-animation.js"></script>
     <style>
         body {
             height: 100dvw;
@@ -20,20 +15,24 @@
             font-family: monospace;
             font-size: 4.5dvw;
             font-weight: 100;
-            display: inline-block;
-            padding: 1dvw;
+            margin: 0;  
+            margin-left: 1dvw;
         }
-        #code { 
+
+        input { 
             color: white;
             background-color: black;
             font-size: inherit;
             font-weight: inherit;
             height: 9dvw;
             width: 65dvw;
-            border: none;
+            width: 98%;
+            border-top: none;
+            border-left: none;
+            border-right: none;
             outline: none;
-            caret-color: grey;
         }
+
         #linker {
             color: black;
             font-size: 4dvw;
@@ -42,8 +41,5 @@
             margin-left: 25dvw;
         }
     </style>
-
-    <script src="print-animation.js"></script>
-
 </body>
 </html>
