@@ -1,11 +1,10 @@
-const a  = document.getElementById("riddle")
 let arr = "Enter your password."
 
 async function EXE(ar) {
-    let exe = document.createTextNode("EXIXE: ")
+    let exe = document.createTextNode("EIXIE: ")
     document.body.appendChild(exe)
     for (let i = 0; i < arr.length; i++) {
-        await sleep(100);
+        await sleep(70);
         var txt = document.createTextNode(ar.charAt(i))
         document.body.appendChild(txt)
     }
@@ -20,10 +19,14 @@ async function sleep(num) {
 async function POST() {
     var form = document.createElement("form")
     form.setAttribute("method", "POST");
+
     var input = document.createElement("input");
+    input.setAttribute("id", "inin");
     input.setAttribute("type", "text");
     input.setAttribute("name", "code");
-    input.setAttribute("autofocus", "on")
+    input.setAttribute("autofocus", "on");
+    input.setAttribute("autosuggestion", "off");
+    
     form.appendChild(input)
     document.body.appendChild(form)
 }
@@ -33,6 +36,4 @@ async function main() {
     await POST()  
 }
 
-
-main()
 

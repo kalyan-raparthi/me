@@ -5,10 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> !localhost </title>
     </head>
-    <body>
+        <div id="alerter">
+            Newbie?
+            <br>
+            <button type="button">GET A CODE </button>
+            <br>
+            <button type="button" onclick="document.getElementById('alerter').remove(); main(); document.body.style.cursor = 'none  '"> CLOSE </button>
+        </div>
+    <body>  
+    </body>
     <script src="print-animation.js"></script>
     <style>
         body {
+            cursor: cell;
             height: 100dvw;
             margin:  2dvh 0 0 2dvh;
             background-color: black;
@@ -46,6 +55,40 @@
             bottom: 0;
             margin-left: 25dvw;
         }
+
+        #alerter {
+            margin-top: 16dvw;
+            margin-left: 35dvw;
+            text-align: center;
+            width: 20vw;
+            height: 12dvw;
+            padding: 3.7dvw;
+            font-size: 2dvw;
+            background-color: black;
+            font-weight: 200;
+            color: white;
+            border: solid;
+            border-width: 0.111dvw;
+            border-color: white;
+            position: absolute;
+            backdrop-filter: opacity(100%);
+        }
+
+        button {
+            margin-top: 1dvw;
+            height: 3dvw;
+            width: 20dvw;
+            font-family: monospace;
+            border: solid;
+            background-color: black;
+            color: white;
+        }
+
+        button:hover {
+            cursor: none;
+            font-size: 1dvw;
+        }
+
     </style>
 </body>
 </html>
