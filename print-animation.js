@@ -1,11 +1,10 @@
-
-let arr = "Enter your password."
-
+let arr = "Enter your login code."
+let quiz = "What is your name?"
 async function EXE(ar) {
     let exe = document.createTextNode("EIXIE: ")
     document.body.appendChild(exe)
-    for (let i = 0; i < arr.length; i++) {
-        await sleep(70);
+    for (let i = 0; i < ar.length; i++) {
+        await sleep(65);
         var txt = document.createTextNode(ar.charAt(i))
         document.body.appendChild(txt)
     }
@@ -19,8 +18,7 @@ async function sleep(num) {
 
 async function POST() {
     var form = document.createElement("form")
-    form.setAttribute("method", "POST");
-
+    form.setAttribute("method", "reaction()");
     var input = document.createElement("input");
     input.setAttribute("id", "inin");
     input.setAttribute("type", "text");
@@ -32,9 +30,17 @@ async function POST() {
     document.body.appendChild(form)
 }
 
-async function main() {
+funtion reaction() {
+    document.get
+}
+
+async function code() {
     await EXE(arr)
     await POST()  
 }
 
+async function nocode() {
+    await EXE(quiz)
+    await POST()  
+}
 
