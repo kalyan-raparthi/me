@@ -30,10 +30,6 @@ async function POST() {
     document.body.appendChild(form)
 }
 
-funtion reaction() {
-    document.get
-}
-
 async function code() {
     await EXE(arr)
     await POST()  
