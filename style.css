@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    font-size: larger;
+}
+#main {
+    padding-top: 5dvw;
+    padding-top: 1dvw;
+    height: 100dvw;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: rgb(178, 178, 178);
+}
+a::after {
+    font-size: 3dvw;
+}

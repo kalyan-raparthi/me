@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> !localhost </title>
+    </head>
+        <div id="alerter">
+            Newbie?
+            <br>
+            <br>
+            <button type="button" onclick="getElementById('alerter').remove(); nocode(); document.body.style.cursor = 'none'"> GET LOGIN CODE </button>
+            <br>
+            <button type="button" onclick="getElementById('alerter').remove(); code(); document.body.style.cursor = 'none'"> NO </button>
+        </div>
+    <body>  
+    </body>
+    <script src="print-animation.js"></script>
+    <style>
+        body {
+            cursor: cell;
+            height: 100%;
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            font-size: 3dvw;
+            font-weight: lighter;
+            text-wrap: stable;
+        }
+
+        text {
+            color: white;
+            font-family: monospace;
+            font-size: 4.5dvw;
+            font-weight: lighter;
+        }
+
+        input {  
+            color: white;
+            background-color: black;
+            font-size: 3dvw;
+            font-weight: 100;
+            height: 7dvw;
+            width: 95%;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            outline: none;
+        }
+
+        #linker {
+            color: black;
+            font-size: 4dvw;
+            position: absolute;
+            bottom: 0;
+            margin-left: 25dvw;
+        }
+
+        #alerter {
+            margin-top: 16dvw;
+            margin-left: 33dvw;
+            text-align: center;
+            width: 24vw;
+            height: 12dvw;
+            padding: 3.7dvw;
+            font-size: 2dvw;
+            background-color: black;
+            font-weight: 200;
+            color: white;
+            border: solid;
+            border-width: 0.111dvw;
+            border-color: white;
+            position: absolute;
+        }
+
+        button {
+            margin-top: 1dvw;
+            height: 3dvw;
+            width: 20dvw;
+            font-family: monospace;
+            border: solid;
+            background-color: black;
+            color: white;
+            font-size: 1dvw;
+        }
+
+        button:hover {
+            height: 3.2dvw;
+            width: 20.2dvw;
+            cursor: none;
+            font-size: 1.1dvw;
+        }
+        @media only screen and (max-width: 600px) {
+            body {
+                    font-size: 5dvw;
+                    height: 70%;
+            }
+
+            #alerter {
+                margin-top: 40dvw;
+                font-size: 7dvw;
+                margin-left: 7dvw;
+                width: 75dvw;
+                height: 50dvw;
+            }
+
+
+            button {
+                font-size: 3.5dvw;
+                margin-top: 5dvw;
+                height: 10dvw;
+                width: 60dvw;
+                font-family: monospace;
+                border: solid;
+                background-color: black;
+                color: white;
+            }
+
+            button:hover {
+                cursor: none;
+                font-size: 3dvw;
+            }
+        }
+
+    </style>
+</body>
+</html>
