@@ -4,10 +4,9 @@ body {
     color: white;
     font-family: monospace;
     font-size: larger;
+    padding-top: 7dvw;
 }
 #main {
-    padding-top: 5dvw;
-    padding-top: 1dvw;
     height: 100dvw;
     color: white;
     font-size: large;
@@ -53,6 +52,9 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        padding-top: 40dvw;
+    }
     p {
         margin: 0.5%;
     }
