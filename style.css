@@ -18,8 +18,52 @@ a {
     color: white;
 }
 a:hover {
-    color: rgb(178, 178, 178);
+    color: grey;
 }
 a::after {
     font-size: 3dvw;
+}
+
+img {
+    width: 30%;
+    border: 2dvw;
+}
+
+button {
+    width: fit-content;
+    font-family: monospace;
+    font-size: 1.5dvw;
+    color: white;
+    background-color: black;
+    border: none;
+}
+button:hover {
+    color: grey;
+}
+
+p {
+    margin: 0.5%;
+}
+
+.cc-div {
+    border: 0.1dvw;
+    border-color: white;
+    border-style: solid;
+    padding: 1dvw 0 1dvw 0;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        margin: 0.5%;
+    }
+    button {
+        font-size: 5.5dvw;
+    }
+    .cc-div {
+        padding: 2.2dvw 0 2.2dvw 0;
+    }
+
+    img {
+        width: 80dvw;
+    }
 }
