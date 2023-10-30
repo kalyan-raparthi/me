@@ -49,6 +49,8 @@ p {
     border-color: white;
     border-style: solid;
     padding: 1dvw 0 1dvw 0;
+    width: 50dvw;
+    margin-left: 25dvw;
 }
 
 @media only screen and (max-width: 600px) {
@@ -59,7 +61,7 @@ p {
         margin: 0.5%;
     }
     button {
-        font-size: 5.5dvw;
+        font-size: 4.5dvw;
     }
     .cc-div {
         padding: 2.2dvw 0 2.2dvw 0;
@@ -67,5 +69,9 @@ p {
 
     img {
         width: 80dvw;
+    }
+    .cc-div {
+        width: 100%;
+        margin: 0;
     }
 }

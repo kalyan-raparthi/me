@@ -1,14 +1,12 @@
+var val = true;
 function bt() {
-    let a = document.getElementById('qb-imgs');
-    let val = 1;
-    if(val === 1) {
-        console.log("ad")
-        a.style.height = '0dvw';
-        val = 0;
+    let img0 = document.getElementById('img-0');
+    if(val) {
+        img0.innerHTML= '<div id="img-0"><img src="/media/qb_img/eixie.png" alt="qb0.jpg"><div class="cc-div"><p class="caption">e i x i e </p><p class="timeposted">[08:10:10:19:2023]</p></div></div>'
+        val = false;
     }
-    else {
-        console.log("as")
-        a.style.height = 'auto';
-         val = 1
+    else if(!val){
+        val = true;    
+        img0.innerHTML = ""    
     }
 }
