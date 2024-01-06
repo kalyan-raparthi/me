@@ -1,18 +1,36 @@
 body {
+    background-image: url("https://media2.giphy.com/media/mgURQQpVPav5vWKrWV/giphy.gif?cid=ecf05e47m76u8xojoyjv4x22w3tn5m41g81mcxkfk57hz65h&ep=v1_gifs_related&rid=giphy.gif&ct=g");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
     text-align: center;
-    background-color: black;
-    color: white;
-    font-family: monospace;
     font-size: larger;
-    padding-top: 7dvw;
+    font-family: 'IBM Plex Mono', monospace;
 }
+
 #main {
     height: 100dvw;
-    color: white;
+    width: 50dvw;
+    margin-top: 5dvw;
+    margin-left: 25dvw;
+    height: 25dvw;
     font-size: large;
     text-align: center;
+    padding-top: 10dvw;
+    border-radius: 1dvw;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
 }
+
+#header {
+    color: white;
+    font-size:x-large;
+    background-color: rgb(13, 13, 13);
+    padding: 2vw 0% 2vw 0%;
+}
+
 a {
+    font-size: x-large;
     text-decoration: none;
     color: white;
 }
@@ -43,19 +61,35 @@ p {
     margin: 0.5%;
 }
 
-.cc-div {
-    border: 0.1dvw;
-    border-color: white;
-    border-style: solid;
-    padding: 1dvw 0 1dvw 0;
+#pdiv {
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 2dvw;
+    padding-top: 3dvw;
     width: 50dvw;
     margin-left: 25dvw;
+    padding-bottom: 3dvw;
+    backdrop-filter: blur(0.3dvw);
 }
+
+img {
+    width: 30dvw;
+}
+.cc-div {
+    border: 0.1dvw;
+    border-color: rgb(7, 7, 7);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-style: solid;
+    width: 30dvw;
+    margin-left: 10dvw;
+}
+
 
 @media only screen and (max-width: 600px) {
     body {
-        padding-top: 40dvw;
+        padding-top: 0dvw;
     }
+    
     p {
         margin: 0.5%;
     }
@@ -69,8 +103,15 @@ p {
     img {
         width: 80dvw;
     }
-    .cc-div {
-        width: 100%;
-        margin: 0;
+    #pdiv {
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-top: 2dvw;
+        padding-top: 3dvw;
+        width: 90dvw;
+        margin-left: 5dvw;
+        padding-bottom: 3dvw;
+        backdrop-filter: blur(0.3dvw);
+        color: aliceblue;
     }
+    
 }
