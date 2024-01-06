@@ -1,6 +1,6 @@
 body {
     background-image: url("https://media2.giphy.com/media/mgURQQpVPav5vWKrWV/giphy.gif?cid=ecf05e47m76u8xojoyjv4x22w3tn5m41g81mcxkfk57hz65h&ep=v1_gifs_related&rid=giphy.gif&ct=g");
-    background-size: 100%;
+    background-size: contain;
     background-repeat: no-repeat;
     margin: 0;
     text-align: center;
