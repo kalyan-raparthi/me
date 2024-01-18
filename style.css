@@ -3,6 +3,7 @@ body {
     font-family: 'Space Mono', monospace;
     font-size: 3dvw;
     width: 100dvh;
+    height: 100dvh;
 }
 .contents{
     text-decoration: none;
@@ -21,6 +22,7 @@ body {
     body {
         font-size: 7dvh; 
         width: 100dvh;
+        height: 100dvh;
     }   
 
     #label {
