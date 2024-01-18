@@ -11,7 +11,7 @@ body {
 
 #label {
     font-family: monospace;
-    font-size: 1dvw;
+    font-size: 1.5dvw;
     color: rgb(142, 142, 0);
     position: absolute; bottom: 0; margin-left: 50%;
     text-decoration: line-through;
