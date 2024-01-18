@@ -1,5 +1,3 @@
-let arr = "Enter your login code."
-let quiz = "What is your name?"
 async function EXE(ar) {
     let exe = document.createTextNode("EIXIE: ")
     document.body.appendChild(exe)
