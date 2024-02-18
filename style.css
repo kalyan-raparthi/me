@@ -2,8 +2,6 @@ body {
     background-color: black;
     font-family: 'Space Mono', monospace;
     font-size: 3dvw;
-    width: 100dvw;
-    height: 100dvh;
 }
 .contents{
     text-decoration: none;
@@ -16,6 +14,14 @@ body {
     color: rgb(142, 142, 0);
     position: absolute; bottom: 0; margin-left: 50%;
     text-decoration: line-through;
+}
+
+#logo {
+    font-family: monospace;
+    font-size: 10dvw;
+    color: rgb(255, 255, 0);
+    text-decoration: line-through;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
