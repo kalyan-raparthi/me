@@ -1,8 +1,8 @@
 body {
+    margin: 0;
     background-color: white;
     font-family: 'Space Mono', monospace;
     font-size: 3dvw;
-    margin: 0.5dvw;
 }
 .contents{
     text-decoration: none;
@@ -13,14 +13,12 @@ body {
     background-color: black;
     text-align: center;
     padding: 2dvw;
-    border-style: solid;
-    border-radius: 1dvw;
 }
 
 #leonardo_triangle {
     font-size: 6dvw;
+    color: rgb(241, 31, 31);
     text-align: center;
-    color: white;
     text-decoration: none;
     font-family: "Rubik Broken Fax", system-ui;
     font-weight: 400;
@@ -35,6 +33,13 @@ body {
     text-decoration: line-through;
 }
 
+#maker {
+    text-decoration: none;
+    color: whitesmoke;
+    text-align: left;
+}
+
+
 #logo {
     font-family: monospace;
     font-size: 10dvw;
@@ -45,29 +50,26 @@ body {
 
 @media screen and (max-width: 600px) {
     body {
-        width: 100%;
+        margin: 0;
     }   
     .index {
-        margin-top: 1dvw;
-        background-color: black;
         text-align: center;
-        padding: 2dvw;
-        border-style: solid;
-        border-radius: 1dvw;
     }
     
     #leonardo_triangle {
         text-decoration: none;
-        font-size: 9dvw;
+        font-size: 10dvw;
         text-align: center;
-        color: white;
+        color: rgb(241, 31, 31);
         font-family: "Rubik Broken Fax", system-ui;
-        font-weight: 400;
-        
+        font-weight: 300;
+        padding-top: 2dvw;
     }
     
-    .maker {
-        text
+    #maker {
+        text-decoration: none;
+        color: whitesmoke;
+        text-align: left;
     }
 
     #label {
