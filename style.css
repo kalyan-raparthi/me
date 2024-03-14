@@ -25,6 +25,7 @@ body {
 }
 #leonardo_triangle {
     padding-top: 3dvw;
+    background-color: black;
 }
 #label {
     font-family: monospace;
@@ -50,6 +51,7 @@ body {
 
 @media screen and (max-width: 600px) {
     body {
+        width: 99%;
         margin: 0;
     }   
     .index {
@@ -63,7 +65,8 @@ body {
 
     }
     #leonardo_triangle {
-        padding-top: 5dvw;
+        background-color: black;
+        padding-top: 6dvw;
         padding-bottom: 5dvw;
     }
     #leonardo_triangle:hover {
