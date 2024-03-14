@@ -14,17 +14,18 @@ body {
     text-align: center;
     padding: 2dvw;
 }
-
-#leonardo_triangle {
-    font-size: 6dvw;
+.leonardo_triangle {
     color: rgb(241, 31, 31);
-    text-align: center;
     text-decoration: none;
     font-family: "Rubik Broken Fax", system-ui;
     font-weight: 400;
     font-style: normal;
-}
+    font-size: 9.5dvw;
 
+}
+#leonardo_triangle {
+    padding-top: 3dvw;
+}
 #label {
     font-family: monospace;
     font-size: 1.5dvw;
@@ -35,10 +36,9 @@ body {
 
 #maker {
     text-decoration: none;
-    color: whitesmoke;
+    color: white;
     text-align: left;
 }
-
 
 #logo {
     font-family: monospace;
@@ -55,23 +55,28 @@ body {
     .index {
         text-align: center;
     }
-    
-    #leonardo_triangle {
-        text-decoration: none;
-        font-size: 10dvw;
-        text-align: center;
+    .leonardo_triangle {
         color: rgb(241, 31, 31);
+        text-decoration: none;
         font-family: "Rubik Broken Fax", system-ui;
-        font-weight: 300;
-        padding-top: 2dvw;
+        font-weight: 400;
+
+    }
+    #leonardo_triangle {
+        padding-top: 5dvw;
+        padding-bottom: 5dvw;
+    }
+    #leonardo_triangle:hover {
+        color: white;
     }
     
     #maker {
         text-decoration: none;
         color: whitesmoke;
-        text-align: left;
     }
-
+    #maker:hover {
+        color: crimson;
+    }
     #label {
         font-family: monospace;
         font-size: 6dvw;
