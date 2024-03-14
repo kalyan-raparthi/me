@@ -1,11 +1,30 @@
 body {
-    background-color: black;
+    background-color: white;
     font-family: 'Space Mono', monospace;
     font-size: 3dvw;
+    margin: 0.5dvw;
 }
 .contents{
     text-decoration: none;
     color: white;
+}
+
+.index {
+    background-color: black;
+    text-align: center;
+    padding: 2dvw;
+    border-style: solid;
+    border-radius: 1dvw;
+}
+
+#leonardo_triangle {
+    font-size: 6dvw;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-family: "Rubik Broken Fax", system-ui;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #label {
@@ -26,10 +45,26 @@ body {
 
 @media screen and (max-width: 600px) {
     body {
-        font-size: 7dvh; 
-        width: 100dvw;
-        height: 100dvh;
     }   
+    .index {
+        margin-top: 1dvw;
+        background-color: black;
+        text-align: center;
+        padding: 2dvw;
+        border-style: solid;
+        border-radius: 1dvw;
+    }
+    
+    #leonardo_triangle {
+        text-decoration: none;
+        font-size: 9dvw;
+        text-align: center;
+        color: white;
+        font-family: "Rubik Broken Fax", system-ui;
+        font-weight: 400;
+        
+    }
+    
 
     #label {
         font-family: monospace;
