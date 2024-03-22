@@ -1,8 +1,9 @@
 body {
-    margin: 0;
-    background-color: white;
+    margin: 3%;
+    background-color: black;
     font-family: 'Space Mono', monospace;
     font-size: 3dvw;
+    color: white;
 }
 .contents{
     text-decoration: none;
