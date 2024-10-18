@@ -4,10 +4,9 @@ function addParagraph() {
     const heading = document.createElement('h1');
     heading.textContent = '[qb]';
     
-    
-    const paragraph = document.createElement('p');
-    paragraph.textContent = '> ';
-    
+    // const paragraph = document.createElement('p');
+    // paragraph.textContent = '>';
+    // contentDiv.appendChild(paragraph);
     
     const button = document.createElement('button');
     button.textContent = 'SHOW_PROJECTS';
@@ -17,7 +16,6 @@ function addParagraph() {
         });
         
     contentDiv.appendChild(heading);
-    contentDiv.appendChild(paragraph);
     contentDiv.appendChild(button);
   
   }

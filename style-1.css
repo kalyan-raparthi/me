@@ -1,7 +1,7 @@
-html {
+/* html {
     padding: 0%;
     
-}
+} */
 
 #enter-button {
     position:absolute;
@@ -11,9 +11,9 @@ html {
     font-weight: 300;
     background-color: #97979708;
     backdrop-filter: blur(3px);
-    margin: -3%;
-    height: 110%;
-    width: 105%;
+    /* margin: -3%; */
+    height: 100%;
+    width: 100%;
 }
 
 #enter-button:hover {
@@ -21,14 +21,18 @@ html {
 }
 
 button {
-    margin: 0%;
+    /* margin: 0 0 0 0; */
     color: rgb(255, 255, 255);
-    background-color: #000000;
+    background-color:rgba(0, 0, 0, 0);
     font-family: "IBM Plex Mono", monospace;
     border: none;
     text-decoration: underline;
+    font-size: 5dvb;
 }
 
+button:hover {
+    text-decoration: none;
+}
 p {
     margin: 0;
     font-family: "IBM Plex Mono", monospace;
@@ -40,14 +44,15 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 100%;
-    padding: 5dvb;
+    /* padding: 5dvb; */
 }
 
 body {
-    background: #000000; /* Solid black background */
+    background: #000000; 
     position: relative;
-    min-height: 100vh; /* Ensure it covers the full viewport height */
-    overflow: hidden; /* Turn off scrolling */
+    min-height: 100vh; 
+    overflow: hidden; 
+    padding: 0;
 }
 
 body::before {
@@ -57,7 +62,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(rgb(255, 255, 255) 0.3px, transparent 1px);
+    background-image: radial-gradient(rgb(169, 168, 168) 0.3px, transparent 1px);
     background-size: 9px 9px; 
     opacity: 0.5; 
     z-index: -1;
@@ -77,27 +82,29 @@ body::after {
 }
 
 h1 {
-    margin: 0;
-    /* padding: 2dvh; */
-    /* text-align: center; */
+    margin: 0 0 1% 0;
+    font-size: 8dvb;
     color: rgb(255, 255, 255);
     font-family: "IBM Plex Mono", monospace;
     font-weight: 300;
     font-style: normal;            
 }
 
-
+#content {
+    padding: 3%;
+}
 
 @media (max-width: 768px) {
     #enter-button {
-        margin: 60% -6% -6% -6%;
-        height: 30%;
-        width: 90%;
+        height: 100%;
+        width: 100%;
+        font-size: 6dvh;
     }
-
-    body {
-        margin: 0;
-        padding: 5%;
+    button {
+        font-size: 5dvh
+    }
+    #content {
+        padding: 3%;
     }
 
     body::after {
@@ -105,7 +112,7 @@ h1 {
     }
 
     h1 {
-        font-size: 24px;
-        
+        font-size: 5dvh;
+        margin-bottom: 3%;
     }
 }
