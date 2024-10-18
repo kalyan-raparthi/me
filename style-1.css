@@ -1,5 +1,12 @@
 html {
     padding: 0%;
+    
+}
+
+button {
+    color: rgb(0, 0, 0);
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
 }
 
 body {
