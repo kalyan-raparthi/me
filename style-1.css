@@ -3,10 +3,18 @@ html {
     
 }
 
-button {
-    color: rgb(0, 0, 0);
+#enter-button {
+    position:absolute;
+    margin-top: -20dvb;
+    border: none;
+    color: rgb(255, 255, 255);
     font-family: "IBM Plex Mono", monospace;
     font-weight: 300;
+    height: 110%;
+    width: 100%;
+    background-color: #97979708;
+    backdrop-filter: blur(3px);
+    text-decoration: underline;
 }
 
 body {
