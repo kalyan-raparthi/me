@@ -40,8 +40,11 @@ body::after {
     z-index: -2; /* Keep it behind everything */
 }
 
-/* JavaScript code to change dot color on scroll up */
-
 h1 {
-    color: pink;
+    padding: 2dvh;
+    text-align: center;
+    color: yellow;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;            
 }
