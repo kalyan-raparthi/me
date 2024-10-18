@@ -110,6 +110,9 @@ h1 {
     body::after {
         background-size:10px 10px;
     }
+    p {
+        margin-right: 3dvb;
+    }
 
     h1 {
         font-size: 5dvh;

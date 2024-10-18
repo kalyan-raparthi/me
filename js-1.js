@@ -1,3 +1,11 @@
+function insertParagraphAfter(elementId, paragraphText) {
+    const element = document.getElementById(elementId);
+    const paragraph = document.createElement('p');
+    paragraph.textContent = paragraphText;
+  
+    element.parentNode.insertBefore(paragraph, element.nextSibling);
+  }
+
 function addParagraph() {
     const contentDiv = document.getElementById('content');
 
@@ -12,7 +20,7 @@ function addParagraph() {
     button.textContent = 'SHOW_PROJECTS';
     button.addEventListener('click',  
         () => {
-            
+            insertParagraphAfter("content", "github id: qb-bin");
         });
         
     contentDiv.appendChild(heading);
