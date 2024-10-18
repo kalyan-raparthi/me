@@ -14,6 +14,9 @@ html {
     width: 100%;
     background-color: #97979708;
     backdrop-filter: blur(3px);
+}
+
+#enter-button:hover {
     text-decoration: underline;
 }
 
