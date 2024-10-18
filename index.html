@@ -13,8 +13,22 @@
 </style>
 
 <body>
-    <div class="title">
-        <h1>[qb]</h1>
-    </div>
+        <h1 class="title">[qb]</h1>
 </body>
 </html>
+
+<script>
+    function toggleFullScreen() {
+    const element = document.documentElement;
+  
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { /* Firefox */
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { /* Chrome, Safari, Opera */
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE/Edge */
+      element.msRequestFullscreen();
+    }
+  }
+</script>
