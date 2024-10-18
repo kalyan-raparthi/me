@@ -24,26 +24,10 @@ body::before {
     height: 100%;
     background-image: radial-gradient(rgb(255, 255, 255) 0.3px, transparent 1px);
     background-size: 9px 9px; 
-    @media (max-width: 768px) { 
-        background-size: 6px 6px; 
-    }
     opacity: 0.5; 
     z-index: -1;
-
-    body::before {
-        /* ... other properties ... */
-        animation: dotAnimation 3s infinite;
-    }
 }
 
-@keyframes dotAnimation {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(calc(random() * 100vw - 50vw), calc(random() * 100vh - 50vh));
-    }
-}
 
 body::after {
     content: "";
@@ -65,4 +49,17 @@ h1 {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 300;
     font-style: normal;            
+}
+
+
+
+@media (max-width: 768px) {
+    body::after {
+        background-size:10px 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+        
+    }
 }
