@@ -4,7 +4,7 @@ function insertParagraphAfter(elementId, paragraphText) {
     paragraph.textContent = paragraphText;
   
     element.parentNode.insertBefore(paragraph, element.nextSibling);
-  }
+}
 
 function addParagraph() {
     const contentDiv = document.getElementById('content');
@@ -12,21 +12,14 @@ function addParagraph() {
     const heading = document.createElement('h1');
     heading.textContent = '[qb]';
     
-    // const paragraph = document.createElement('p');
-    // paragraph.textContent = '>';
-    // contentDiv.appendChild(paragraph);
+    const anchor = document.createElement('a');
+    anchor.href = 'https://www.google.com';
+    anchor.textContent = 'SHOW_PROJECTS';
+          const container = document.getElementById('content'); // Replace with your container element ID
     
-    const button = document.createElement('button');
-    button.textContent = 'SHOW_PROJECTS';
-    button.addEventListener('click',  
-        () => {
-            insertParagraphAfter("content", "github id: qb-bin");
-        });
-        
-    contentDiv.appendChild(heading);
-    contentDiv.appendChild(button);
-  
-  }
+    contentDiv.appendChild(heading);  
+    contentDiv.appendChild(anchor);
+}
 
 async function toggleFullScreen() {
     const element = document.documentElement;

@@ -1,17 +1,12 @@
-/* html {
-    padding: 0%;
-    
-} */
-
 #enter-button {
     position:absolute;
     border: none;
     color: rgb(255, 255, 255);
     font-family: "IBM Plex Mono", monospace;
     font-weight: 300;
+    font-size: 5dvb;
     background-color: #97979708;
     backdrop-filter: blur(3px);
-    /* margin: -3%; */
     height: 100%;
     width: 100%;
 }
@@ -20,7 +15,7 @@
     text-decoration: underline;
 }
 
-button {
+a {
     /* margin: 0 0 0 0; */
     color: rgb(255, 255, 255);
     background-color:rgba(0, 0, 0, 0);
@@ -30,7 +25,7 @@ button {
     font-size: 5dvb;
 }
 
-button:hover {
+a:hover {
     text-decoration: none;
 }
 p {
@@ -52,7 +47,6 @@ body {
     position: relative;
     min-height: 100vh; 
     overflow: hidden; 
-    padding: 0;
 }
 
 body::before {
@@ -100,7 +94,7 @@ h1 {
         width: 100%;
         font-size: 6dvh;
     }
-    button {
+    a {
         font-size: 5dvh
     }
     #content {
