@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Scroll Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-page view with hidden overflow to prevent scrolling on the body */
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Disable default scroll */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for all slides */
+        .reel-container {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            width: 100vw;
+            overflow: hidden; /* Prevent scrolling the container */
+            display: flex;
+            flex-direction: column; /* Stack slides vertically */
+        }
+
+        /* Style for each individual slide */
+        .reel-slide {
+            height: 100vh; /* Full height for each slide */
+            width: 100vw; /* Full width for each slide */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            background-color: #3498db; /* Default background color */
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-out; /* Smooth and slow transition */
+        }
+
+        /* Style for each slide, with different background colors */
+        .reel-slide:nth-child(1) {
+            background-color: #3498db;
+        }
+        .reel-slide:nth-child(2) {
+            background-color: #2ecc71;
+        }
+        .reel-slide:nth-child(3) {
+            background-color: #e74c3c;
+        }
+        .reel-slide:nth-child(4) {
+            background-color: #f39c12;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="reel-container">
+    <div class="reel-slide">Slide 1</div>
+    <div class="reel-slide">Slide 2</div>
+    <div class="reel-slide">Slide 3</div>
+    <div class="reel-slide">Slide 4</div>
+</div>
+
+<script>
+    let currentSlide = 0; // Start from the first slide
+    const slides = document.querySelectorAll('.reel-slide');
+    const totalSlides = slides.length;
+
+    // Function to move slides up (next slide)
+    function goToNextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlidePosition();
+        }
+    }
+
+    // Function to move slides down (previous slide)
+    function goToPreviousSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlidePosition();
+        }
+    }
+
+    // Function to update the position of the slides
+    function updateSlidePosition() {
+        slides.forEach((slide, index) => {
+            const position = (index - currentSlide) * 100; // Move slides up or down based on currentSlide
+            slide.style.transform = `translateY(${position}%)`; // Translate each slide up or down
+        });
+    }
+
+    // Scroll event listener
+    window.addEventListener('wheel', function(e) {
+        // Reduce scroll sensitivity by 50% (scale deltaY by 0.5)
+        const adjustedDeltaY = e.deltaY * 0.5;
+
+        if (adjustedDeltaY > 0) {
+            // Scrolling down (next slide)
+            goToNextSlide();
+        } else if (adjustedDeltaY < 0) {
+            // Scrolling up (previous slide)
+            goToPreviousSlide();
+        }
+    }, { passive: true });
+
+    // Initial setup for slide positions
+    updateSlidePosition();
+</script>
+
+</body>
+</html>
