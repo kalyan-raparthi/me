@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reel Scroll Effect</title>
+    <title>Reel Scroll Effect with Tracker</title>
     <style>
         * {
             margin: 0;
@@ -58,6 +58,32 @@
             background-color: #f39c12;
         }
 
+        /* Style for the slide tracker */
+        .slide-tracker {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Style for each tracker dot */
+        .tracker-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #bbb;
+            margin: 5px 0;
+            border-radius: 50%;
+            transition: background-color 0.3s ease; /* Smooth active state transition */
+        }
+
+        /* Active tracker dot */
+        .active {
+            background-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -69,16 +95,26 @@
     <div class="reel-slide">Slide 4</div>
 </div>
 
+<!-- Slide Tracker -->
+<div class="slide-tracker" id="tracker">
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+</div>
+
 <script>
     let currentSlide = 0; // Start from the first slide
     const slides = document.querySelectorAll('.reel-slide');
     const totalSlides = slides.length;
+    const trackerDots = document.querySelectorAll('.tracker-dot'); // Tracker dots
 
     // Function to move slides up (next slide)
     function goToNextSlide() {
         if (currentSlide < totalSlides - 1) {
             currentSlide++;
             updateSlidePosition();
+            updateTracker();
         }
     }
 
@@ -87,6 +123,7 @@
         if (currentSlide > 0) {
             currentSlide--;
             updateSlidePosition();
+            updateTracker();
         }
     }
 
@@ -96,6 +133,12 @@
             const position = (index - currentSlide) * 100; // Move slides up or down based on currentSlide
             slide.style.transform = `translateY(${position}%)`; // Translate each slide up or down
         });
+    }
+
+    // Function to update the tracker (highlight the current slide)
+    function updateTracker() {
+        trackerDots.forEach(dot => dot.classList.remove('active')); // Remove active class from all dots
+        trackerDots[currentSlide].classList.add('active'); // Add active class to current dot
     }
 
     // Scroll event listener (for desktop scroll)
@@ -138,8 +181,9 @@
         }
     });
 
-    // Initial setup for slide positions
+    // Initial setup for slide positions and tracker
     updateSlidePosition();
+    updateTracker();
 </script>
 
 </body>
