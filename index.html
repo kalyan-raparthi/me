@@ -3,19 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style-1.css">
-    <title><me></title>
-<script src="./js-1.js"></script>
+    <title>[ qb ]</title>
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Full-page view with hidden overflow to prevent scrolling on the body */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        /* Container for all slides */
+        .reel-container {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            width: 100vw;
+            overflow: hidden; /* Prevent scrolling the container */
+            display: flex;
+            flex-direction: column; /* Stack slides vertically */
+        }
+
+        /* Style for each individual slide */
+        .reel-slide {
+            height: 100vh; /* Full height for each slide */
+            width: 100vw; /* Full width for each slide */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 1s ease-out; /* Smooth and slow transition */
+        }
+
+        /* Background color and falling stars animation for Slide 1 */
+        .reel-slide:nth-child(1) {
+            background-color: #000000; /* Black background */
+            position: relative;
+        }
+
+        /* Create the falling stars effect */
+        .falling-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow interaction with elements above */
+            z-index: -1; /* Place stars behind content */
+        }
+
+        .falling-stars .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fall 5s linear infinite, fadeIn 2s ease-in-out;
+            filter: blur(2px); /* Apply blur to create a soft glowing effect */
+        }
+
+        /* Falling stars animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Slide background colors for other slides */
+        .reel-slide:nth-child(2) {
+            background-color: #444444; /* Charcoal */
+        }
+        .reel-slide:nth-child(3) {
+            background-color: #555555; /* Medium Grey */
+        }
+        .reel-slide:nth-child(4) {
+            background-color: #000000; /* Pure Black */
+        }
+
+        /* Style for the slide tracker */
+        .slide-tracker {
+            padding: 10px;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 10px;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+            border-radius: 5px;
+        }
+
+        /* Style for each tracker dot */
+        .tracker-dot {
+            width: 4px; /* Smaller dot width */
+            height: 8px; /* Smaller dot height */
+            background-color: #fff; /* Default white dots for visibility */
+            margin: 5px 0;
+            border-radius: 10%;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth active state transition */
+        }
+
+        /* Active tracker dot */
+        .active {
+            background-color: #676767; /* Grey active dot to contrast with dark backgrounds */
+            transform: scale(1.5); /* Make the active dot larger */
+        }
+
+    </style>
 </head>
-<!-- font_imports -->
-<style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');</style>
-
 <body>
-    <h1 style="font-size: 3.5dvh"> opens on JAN 01 2025
-    </h1>
-<!--     <button onclick="toggleFullScreen()" id="enter-button">enter</button> -->
-    <br>
-<!--     <div id="content"></div> -->
+
+<div class="reel-container">
+    <div class="reel-slide">
+        <div class="falling-stars" id="fallingStars"></div>
+        who's qb?
+    </div>
+    <div class="reel-slide">research <br> projects <br> art </div>
+    <div class="reel-slide">imgs</div>
+    <div class="reel-slide">contact</div>
+</div>
+
+<!-- Slide Tracker -->
+<div class="slide-tracker" id="tracker">
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+</div>
+
+<script>
+    let currentSlide = 0; // Start from the first slide
+    const slides = document.querySelectorAll('.reel-slide');
+    const totalSlides = slides.length;
+    const trackerDots = document.querySelectorAll('.tracker-dot'); // Tracker dots
+    const fallingStars = document.getElementById('fallingStars');
+
+    // Function to create falling stars
+    function createFallingStars() {
+        for (let i = 0; i < 30; i++) { // Create 30 stars
+            const star = document.createElement('div');
+            star.classList.add('star');
+            const size = Math.random() * 3 + 1; // Random size for the star
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            // Random position
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random duration for animation (slower fall)
+
+            fallingStars.appendChild(star);
+        }
+    }
+
+    // Function to move slides up (next slide)
+    function goToNextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlidePosition();
+            updateTracker();
+        }
+    }
+
+    // Function to move slides down (previous slide)
+    function goToPreviousSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlidePosition();
+            updateTracker();
+        }
+    }
+
+    // Function to update the position of the slides
+    function updateSlidePosition() {
+        slides.forEach((slide, index) => {
+            const position = (index - currentSlide) * 100; // Move slides up or down based on currentSlide
+            slide.style.transform = `translateY(${position}%)`; // Translate each slide up or down
+        });
+    }
+
+    // Function to update the tracker (highlight the current slide)
+    function updateTracker() {
+        // Remove active class from all dots
+        trackerDots.forEach(dot => dot.classList.remove('active')); 
+
+        // Add active class to current dot
+        trackerDots[currentSlide].classList.add('active'); 
+        
+        // Adjust dot color based on the current slide's background color
+        const currentSlideBackground = slides[currentSlide].style.backgroundColor;
+
+        // Check for the darkness of the background and adjust the dots accordingly
+        if (isDark(currentSlideBackground)) {
+            trackerDots.forEach(dot => {
+                dot.style.backgroundColor = "#fff"; // White dots for dark backgrounds
+            });
+        } else {
+            trackerDots.forEach(dot => {
+                dot.style.backgroundColor = "#333"; // Dark dots for light backgrounds
+            });
+        }
+    }
+
+    // Function to check if the color is dark (basic check for dark colors)
+    function isDark(color) {
+        const rgb = color.match(/\d+/g);
+        if (!rgb) return false;  // Default to not dark if no color found
+        const r = parseInt(rgb[0]);
+        const g = parseInt(rgb[1]);
+        const b = parseInt(rgb[2]);
+        // Calculate luminance using a formula
+        const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+        return luminance < 128; // Luminance threshold for darkness
+    }
+
+    // Scroll event listener (for desktop scroll)
+    window.addEventListener('wheel', function(e) {
+        // Reduce scroll sensitivity by 50% (scale deltaY by 0.5)
+        const adjustedDeltaY = e.deltaY * 0.5;
+
+        if (adjustedDeltaY > 0) {
+            // Scrolling down (next slide)
+            goToNextSlide();
+        } else if (adjustedDeltaY < 0) {
+            // Scrolling up (previous slide)
+            goToPreviousSlide();
+        }
+    }, { passive: true });
+
+    // Mobile touch swipe events
+    let startTouchY = 0;
+
+    window.addEventListener('touchstart', function(e) {
+        // Capture the starting touch position
+        startTouchY = e.touches[0].clientY;
+    });
+
+    window.addEventListener('touchmove', function(e) {
+        // Prevent default scrolling behavior on mobile
+        e.preventDefault();
+    });
+
+    window.addEventListener('touchend', function(e) {
+        const endTouchY = e.changedTouches[0].clientY;
+        const touchDifference = startTouchY - endTouchY;
+
+        if (touchDifference > 30) {
+            // Swipe down (next slide)
+            goToNextSlide();
+        } else if (touchDifference < -30) {
+            // Swipe up (previous slide)
+            goToPreviousSlide();
+        }
+    });
+
+    // Initial setup for slide positions and tracker
+    updateSlidePosition();
+    updateTracker();
+
+    // Create the falling stars on Slide 1 only
+    createFallingStars();
+
+</script>
+
 </body>
 </html>
