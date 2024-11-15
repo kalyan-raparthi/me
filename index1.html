@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reel Scroll Effect with Tracker</title>
+    <title>[ qb ]</title>
+    <!-- font imports -->
+     <!-- ibm flex -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+
+
     <style>
         * {
             margin: 0;
@@ -14,8 +21,11 @@
         /* Full-page view with hidden overflow to prevent scrolling on the body */
         html, body {
             height: 100%;
-            overflow: hidden; /* Disable default scroll */
-            font-family: Arial, sans-serif;
+            overflow: hidden; 
+            font-family: "IBM Plex Sans", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+
         }
 
         /* Container for all slides */
@@ -46,37 +56,38 @@
 
         /* Style for each slide, with different background colors */
         .reel-slide:nth-child(1) {
-            background-color: #3498db;
+            background-color: #606060;
         }
         .reel-slide:nth-child(2) {
-            background-color: #2ecc71;
+            background-color: #3a3a3a;
         }
         .reel-slide:nth-child(3) {
-            background-color: #e74c3c;
+            background-color: #282828;
         }
         .reel-slide:nth-child(4) {
-            background-color: #f39c12;
+            background-color: #000000;
         }
 
         /* Style for the slide tracker */
         .slide-tracker {
+            padding: 2dvb;
             position: fixed;
             top: 50%;
             left: 0;
             transform: translateY(-50%);
-            width: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
+            /* width: 10px; */
+            /* background-color: rgba(0, 0, 0, 0.5); */
             padding: 10px;
             border-radius: 5px;
         }
 
         /* Style for each tracker dot */
         .tracker-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #bbb;
+            width: 1dvh;
+            height: 2dvh;
+            background-color: #676767;
             margin: 5px 0;
-            border-radius: 50%;
+            border-radius: 10%;
             transition: background-color 0.3s ease; /* Smooth active state transition */
         }
 
@@ -89,10 +100,10 @@
 <body>
 
 <div class="reel-container">
-    <div class="reel-slide">Slide 1</div>
-    <div class="reel-slide">Slide 2</div>
-    <div class="reel-slide">Slide 3</div>
-    <div class="reel-slide">Slide 4</div>
+    <div class="reel-slide">who's qb?</div>
+    <div class="reel-slide">research <br> projects <br> art </div>
+    <div class="reel-slide">imgs</div>
+    <div class="reel-slide">contact</div>
 </div>
 
 <!-- Slide Tracker -->
