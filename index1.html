@@ -98,7 +98,7 @@
         });
     }
 
-    // Scroll event listener
+    // Scroll event listener (for desktop scroll)
     window.addEventListener('wheel', function(e) {
         // Reduce scroll sensitivity by 50% (scale deltaY by 0.5)
         const adjustedDeltaY = e.deltaY * 0.5;
@@ -111,6 +111,32 @@
             goToPreviousSlide();
         }
     }, { passive: true });
+
+    // Mobile touch swipe events
+    let startTouchY = 0;
+
+    window.addEventListener('touchstart', function(e) {
+        // Capture the starting touch position
+        startTouchY = e.touches[0].clientY;
+    });
+
+    window.addEventListener('touchmove', function(e) {
+        // Prevent default scrolling behavior on mobile
+        e.preventDefault();
+    });
+
+    window.addEventListener('touchend', function(e) {
+        const endTouchY = e.changedTouches[0].clientY;
+        const touchDifference = startTouchY - endTouchY;
+
+        if (touchDifference > 50) {
+            // Swipe down (next slide)
+            goToNextSlide();
+        } else if (touchDifference < -50) {
+            // Swipe up (previous slide)
+            goToPreviousSlide();
+        }
+    });
 
     // Initial setup for slide positions
     updateSlidePosition();
