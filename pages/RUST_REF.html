@@ -23,14 +23,15 @@
             text-decoration: underline  ;
         }
         code {
-            background-color: rgb(49, 49, 49);
+            color: azure;
             padding: 1dvb;
         }
     
     </style>
 </head>
 <body>
-<pre><h1>RUST REFERENCE</h1><sub>last updated : 04  /01/2025</sub><h2>DATA TYPES</h2><hr><p><h3>SIMPLE_VARIABLES</h3>1. unsigned integers :
+<pre><h1>RUST REFERENCE</h1><sub>last updated : 04/01/2025</sub><h2>DATA TYPES</h2><hr><h3>SIMPLE_VARIABLES</h3>
+1. unsigned integers :
     u8 
     u16
     u32
@@ -66,9 +67,33 @@
 
 6. architecture dependent integer
     usize & isize
-
+    
 <code>let u1: usize = 1000;</code>
-</p>
+
+7. pointer
+    const * T
+    mut * T
+
+<code>
+    let n: u8 = 10;
+    let num_ptr: *const i32 = &n; 
+        unsafe {
+        
+            println!("{:?}", *my_num_ptr);
+    }</code>
+
+8.  reference
+    &T
+<code>
+    let x:u8 = 10;
+    let x_ref: &u8 = &x;   
+</code>
+
+<h3>COMPOND_DATATYPES</h3>
+    array
+    str
+    slice
+    tuple
 <h2>CONTROL STRUCTURES</h2><hr>
 for while loop 
 </pre>
