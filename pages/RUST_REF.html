@@ -38,7 +38,7 @@
     u64
     u128 
 
-<code>let ux: u8 = 0;</code>
+    <code>let ux: u8 = 0;</code>
 
 2. singned integers : 
     i8
@@ -47,53 +47,74 @@
     i64
     i128 
 
-<code>let sx: i8 = 0;</code>
+    <code>let sx: i8 = 0;</code>
 
 3. floating ponit numbers :
     f32
     f64
 
-<code>let fx: f32 = 10.122;</code>
+    <code>let fx: f32 = 10.122;</code>
 
 4. charater : 
     char
 
-<code>let c: char = 'z';</code>
+    <code>let c: char = 'z';</code>
 
 5. bool : 
     bool (true/false)
 
-<code>let b: bool = ture</code>
+    <code>let b: bool = ture</code>
 
 6. architecture dependent integer
     usize & isize
     
-<code>let u1: usize = 1000;</code>
+    <code>let u1: usize = 1000;</code>
 
 7. pointer
     const * T
     mut * T
 
-<code>
+    <code>
     let n: u8 = 10;
-    let num_ptr: *const i32 = &n; 
+    let n_ptr: *const i32 = &n; 
         unsafe {
         
-            println!("{:?}", *my_num_ptr);
+            println!("{:?}", *n_ptr);
     }</code>
 
 8.  reference
     &T
-<code>
+    <code>
     let x:u8 = 10;
-    let x_ref: &u8 = &x;   
-</code>
+    let x_ref: &u8 = &x;</code>
 
 <h3>COMPOND_DATATYPES</h3>
-    array
-    str
-    slice
-    tuple
+    array : fixed collection of same similar data types
+        [T: N]
+    <code>
+    let mut x: [u8: 3] = [1, 2, 3];
+    println!("{}", a[0]); // 1</code>
+
+    tuple : fixed collection of same various data types
+        (T: VALUE)
+    <code>
+    let x: (u8, char, f32) = (9, 'h', 10.9); 
+    println!("{}", x.0); // 9</code>
+    
+    slice : a reference to contiguous sequence of same datatype elements
+        &[i .. i + n]  
+    <code>
+    let a: [u8; 3] = [1, 2, 3];
+    let t: &[u8] = &a[0 .. 1];</code>
+    
+    str : raw array of characters
+        [char: N]
+    <code>
+    let c: [char: 3] = ['a', 'b', 'c'];
+    let a: char = c[0];</code>
+    
+    struct : 
+    enum : 
 <h2>CONTROL STRUCTURES</h2><hr>
 for while loop 
 </pre>
