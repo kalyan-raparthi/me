@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fn & mod</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/RUST_REF.html">[ back ]</a>
+    <pre>
+        1. fn : dividing and reusage of a code block which take parameters and return specified value
+        fn FUNC_NAME(VAR_NAME: T) {
+
+        }
+        <code>
+            fn main() {
+                println!("{}", sum(3, 6));
+            }
+            
+            // implimenting a struct
+            
+            struct two_nums {
+                a: u8,
+                b: u8,
+            }
+            
+            impl two_nums {
+                fn add(&self) {
+                    println!("{}", {self.a + self.b})
+                }
+            }
+            
+            fn main() {
+                let nums: two_nums = two_nums {
+                    a: 3,
+                    b: 6,
+                };
+                
+                // OOP like feature
+                nums.add();
+            }
+        </code>
+    2. closure: funtion using let
+        let FN_NAME = | PARAMERTER: T | -> { // }
+        <code>
+            // increamenting using closure
+            let n = | mut i | -> u8 { i += 1; i};
+            println!("{}", n(9));
+        </code>
+    3. 
+    </pre>
+</body>
+</html>

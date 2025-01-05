@@ -3,133 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>RUST REFERENCE</title>
-    
-    <style>
-        html {
-            padding: 3dvh;
-            background-color: black;
-            color: chartreuse;
-            font-family: "IBM Plex Sans", serif;
-            font-weight: 300;
-            font-style: normal;
-            font-size: larger;
-        }
-        h1 {
-            text-decoration: underline  ;
-        }
-        code {
-            color: azure;
-            padding: 1dvb;
-        }
-    
-    </style>
 </head>
 <body>
-<pre><h1>RUST REFERENCE</h1><sub>last updated : 04/01/2025</sub><h2>DATA TYPES</h2><hr><h3>SIMPLE_VARIABLES</h3>
-1. unsigned integers :
-    u8 
-    u16
-    u32
-    u64
-    u128 
+<pre><h1>RUST REFERENCE</h1><sub>last updated : 04/01/2025</sub>
 
-    <code>let ux: u8 = 0;</code>
+<a href="/rust_data_types.html"> 1. data types</a>
 
-2. singned integers : 
-    i8
-    i16
-    i32
-    i64
-    i128 
+<a href="/flow_of_control.html"> 2. flow of control</a>
 
-    <code>let sx: i8 = 0;</code>
-
-3. floating ponit numbers :
-    f32
-    f64
-
-    <code>let fx: f32 = 10.122;</code>
-
-4. charater : 
-    char
-
-    <code>let c: char = 'z';</code>
-
-5. bool : 
-    bool (true/false)
-
-    <code>let b: bool = ture</code>
-
-6. architecture dependent integer
-    usize & isize
-    
-    <code>let u1: usize = 1000;</code>
-
-7. pointer
-    const * T
-    mut * T
-
-    <code>
-    let n: u8 = 10;
-    let n_ptr: *const i32 = &n; 
-        unsafe {
-        
-            println!("{:?}", *n_ptr);
-    }</code>
-
-8.  reference
-    &T
-    <code>
-    let x:u8 = 10;
-    let x_ref: &u8 = &x;</code>
-
-<h3>COMPOND_DATATYPES</h3>
-    array : fixed collection of same similar data types
-        [T: N]
-    <code>
-    let mut x: [u8: 3] = [1, 2, 3];
-    println!("{}", a[0]); // 1</code>
-
-    tuple : fixed collection of same various data types
-        (T: VALUE)
-    <code>
-    let x: (u8, char, f32) = (9, 'h', 10.9); 
-    println!("{}", x.0); // 9</code>
-    
-    slice : a reference to contiguous sequence of same datatype elements
-        &[i .. i + n]  
-    <code>
-    let a: [u8; 3] = [1, 2, 3];
-    let t: &[u8] = &a[0 .. 1];</code>
-    
-    str : raw array of characters
-        [char: N]
-    <code>
-    let c: [char: 3] = ['a', 'b', 'c'];
-    let a: char = c[0];</code>
-    
-    struct : custom grouped data types
-        struct Struct_name {
-            V: T;
-        }
-        <code>struct S {
-            a: u8, 
-            x: f32,
-        }
-        
-        let mut s: S = S {
-            a: 20,
-            x: 10.0
-        };</code>
-    
-    enum : 
-<h2>CONTROL STRUCTURES</h2><hr>
-for while loop 
+<a href="/fu_and_mod.html"> 3. funtions and modules</a>
 </pre>
 </body>
 </html>

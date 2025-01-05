@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flow of control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="/RUST_REF.html">[ back ]</a>
+<pre>
+<h1>flow of control</h1>
+
+    1. if, else else if : conditional code block execution
+        <code>
+        let n: u8 = 1;
+    
+        if 1 < n {
+            println!("1 < {0}", n);
+        } else if 1 > n {
+            println!("{0} > 1", n);
+        } else {
+            println!("something else");
+        }
+        </code>
+    2. match : swicth like control
+        match VAR {
+            VAR_1 => {//},
+            _ => {},
+        }
+        <CODE>
+            let n: u8 = 11;
+            match n {
+                1 => {
+                    println!("1");
+                },
+                2 | 3 => {
+                    println!("2 | 3");
+                }
+                5..=10 => {
+                    println!("between 5 to 10");
+                }
+                _ => {
+                    println!("more then 10");
+                }
+            }
+        </CODE>
+    3. loop : a infite loop control bt break keyword
+        loop {
+            //
+        }
+        <code>
+            let mut n: u8 = 0;
+    
+            let a = 'l1: loop {
+                if n > 10 {
+                    break 'l1 n;
+                }
+                
+                println!("{n}");
+                //increment operation
+                n = n + 1;
+            };
+            println!("\nexited here: {}", a);
+        </code>
+    4. while: looping with condition
+        while CONDITION {
+            //
+        }
+        <CODE>
+            let mut i: u8 = 0;
+            while i < 10 {
+                println!("{}", i);
+                //increment
+                i += 1;
+        </CODE>
+    5. for: loop with sequences
+        for iter_var in (sequence or iters) {
+            //
+        } 
+        <code>
+            // using range
+            for i in 0..11 {
+                println!("{}", i );
+            }
+            
+            // using iter 
+            let arr: [u8; 10] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for x in arr.iter() {
+                println!("{}", x);
+            }
+        </code>
+</pre>
+</body>
+</html>
