@@ -48,7 +48,32 @@
             let n = | mut i | -> u8 { i += 1; i};
             println!("{}", n(9));
         </code>
-    3. 
+    3. mod and use: used to divide code into various files
+        mod module_name;
+        use module_name::field;
+        <code>
+            pub struct Two {
+                pub a: u8, 
+                pub b: u8,
+            }
+            
+            impl Two {
+                pub fn add(&self) -> u8{
+                    (self.a + self.b) as u8
+                }
+            }
+            // main program file
+            mod p;
+            use p::Two;
+            
+            fn main() {
+                let s = Two {
+                    a: 3, 
+                    b: 6,
+                };
+                println!("{}", s.add());
+            }
+        </code>
     </pre>
 </body>
 </html>
