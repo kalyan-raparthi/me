@@ -24,5 +24,7 @@ a {
     color: rgb(255, 255, 255);
 }
 button {
-    baground-color: none;
+    baground-color: black;
+    border: none;
+    color: white;
 }
