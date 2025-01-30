@@ -81,7 +81,11 @@
             100% { opacity: 0; }
         }
 
-        .reel-slide:nth-child(2) { background-color: #444; }
+        /* Modified to give WORKS slide black spectrum background */
+        .reel-slide:nth-child(2) {
+            background: linear-gradient(to bottom, #000, #444);
+        }
+
         .reel-slide:nth-child(3) { background-color: #555; }
         .reel-slide:nth-child(4) { background-color: #000; }
 
@@ -110,6 +114,19 @@
             transform: scale(1.5);
         }
 
+        /* Added styling for the <a> link */
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #f39c12; /* Bright yellow on hover */
+        }
+
     </style>
 </head>
 <body>
@@ -119,7 +136,9 @@
         <div class="falling-stars" id="fallingStars"></div>
         who's qb?
     </div>
-    <div class="reel-slide"><a href="./pages/home.html" style="a {color: white;} > WORKS </a></div>
+    <div class="reel-slide">
+        <a href="./pages/home.html">WORKS</a>
+    </div>
     <div class="reel-slide">imgs</div>
     <div class="reel-slide">contact</div>
 </div>
