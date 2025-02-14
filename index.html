@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -237,5 +237,190 @@
 
 </script>
 
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #f1f8e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .garden {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .flower {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            z-index: 10; /* Ensure flower petals are in front */
+        }
+
+        .flower .stem {
+            position: absolute;
+            bottom: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 150px;
+            background-color: #3e8e41;
+            border-radius: 5px;
+            z-index: 1; /* Move the stem behind the flower */
+        }
+
+        .flower .leaf {
+            position: absolute;
+            bottom: -10px;  /* Position leaves closer to the stem */
+            width: 40px;
+            height: 20px;
+            background-color: #2c6b2f;
+            border-radius: 15px;
+            transform-origin: center;
+            animation: leafAnimation 4s infinite ease-in-out;
+            z-index: 5; /* Ensure leaves are in front of the stem but behind the petals */
+        }
+
+        .flower .leaf-1 {
+            left: 20%;  /* Adjust position to attach to the left side of the stem */
+            transform: rotate(-45deg);
+        }
+
+        .flower .leaf-2 {
+            right: 20%;  /* Adjust position to attach to the right side of the stem */
+            transform: rotate(45deg);
+        }
+
+        /* Rose-like petals */
+        .petal {
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            background: radial-gradient(circle, #e57373, #c62828);
+            border-radius: 60% 60% 50% 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            animation: growShrink 4s infinite ease-in-out;
+            z-index: 10; /* Keep petals in front */
+        }
+
+        .petal-1 {
+            transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            animation-delay: 0s;
+        }
+
+        .petal-2 {
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+            animation-delay: 0.1s;
+        }
+
+        .petal-3 {
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            animation-delay: 0.2s;
+        }
+
+        .petal-4 {
+            transform: translateX(-50%) translateY(-50%) rotate(135deg);
+            animation-delay: 0.3s;
+        }
+
+        .petal-5 {
+            transform: translateX(-50%) translateY(-50%) rotate(180deg);
+            animation-delay: 0.4s;
+        }
+
+        .petal-6 {
+            transform: translateX(-50%) translateY(-50%) rotate(225deg);
+            animation-delay: 0.5s;
+        }
+
+        .petal-7 {
+            transform: translateX(-50%) translateY(-50%) rotate(270deg);
+            animation-delay: 0.6s;
+        }
+
+        .petal-8 {
+            transform: translateX(-50%) translateY(-50%) rotate(315deg);
+            animation-delay: 0.7s;
+        }
+
+        @keyframes growShrink {
+            0%, 100% {
+                width: 100px;
+                height: 40px;
+            }
+            50% {
+                width: 120px;
+                height: 50px;
+            }
+        }
+
+        @keyframes leafAnimation {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="garden">
+        <div class="flower">
+            <!-- Rose petals -->
+            <div class="petal petal-1"></div>
+            <div class="petal petal-2"></div>
+            <div class="petal petal-3"></div>
+            <div class="petal petal-4"></div>
+            <div class="petal petal-5"></div>
+            <div class="petal petal-6"></div>
+            <div class="petal petal-7"></div>
+            <div class="petal petal-8"></div>
+            <!-- Rose stem -->
+            <div class="stem"></div>
+            <!-- Leaves -->
+            <div class="leaf leaf-1"></div>
+            <div class="leaf leaf-2"></div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add interactivity to change flower animation speed on hover
+        const flower = document.querySelector('.flower');
+
+        flower.addEventListener('mouseenter', function() {
+            this.querySelectorAll('.petal').forEach(petal => petal.style.animationDuration = '2s');
+        });
+
+        flower.addEventListener('mouseleave', function() {
+            this.querySelectorAll('.petal').forEach(petal => petal.style.animationDuration = '4s');
+        });
+    </script>
 </body>
 </html>
